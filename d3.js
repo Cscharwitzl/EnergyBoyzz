@@ -27,9 +27,27 @@ function draw(){
     .attr("fill", "transparent");
 
   d3.select("svg").selectAll("rect")
-    .attr("x", function(d,i){
-      console.log(elements.data());
-      return d3.select("svg").selectAll("rect").data()[i-1] === undefined? 0:d3.select("svg").selectAll("rect").data()[i-1].Prozent*10;
+    .attr("x", function(data, index){
+      var x = 0;
+
+      if(elements.data()[index-1] !== undefined){
+        elements.each(function(d,i){
+          if(index-1 == 0){
+            console.log("elements: ",elements);
+            console.log("d: ",d);
+            console.log("i: ",i);
+            console.log("data: ",data);
+            console.log("index: ",index);
+            console.log("x: ",d3.select(this));
+            console.log("-----------------------------------------------------------------------");
+          }
+        });
+
+        x += elements.data()[index-1].Prozent*10;
+
+      }
+
+      return x;
     });
 
   d3.select("svg")
