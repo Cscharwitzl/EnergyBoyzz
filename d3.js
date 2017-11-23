@@ -31,20 +31,11 @@ function draw(){
       var x = 0;
 
       if(elements.data()[index-1] !== undefined){
-        elements.each(function(d,i){
-          if(index-1 == 0){
-            console.log("elements: ",elements);
-            console.log("d: ",d);
-            console.log("i: ",i);
-            console.log("data: ",data);
-            console.log("index: ",index);
-            console.log("x: ",d3.select(this));
-            console.log("-----------------------------------------------------------------------");
-          }
-        });
+        var el = elements.filter(function (d, i) { return i === index-1;});
 
-        x += elements.data()[index-1].Prozent*10;
+        console.log("el: ",el.data()[0].Prozent);
 
+          x += parseInt(el.attr("x")) + parseInt(el.data()[0].Prozent) * 10;
       }
 
       return x;
