@@ -45,5 +45,12 @@ function draw(){
     .attr("width", "100%")
     .attr("viewBox", "0 0 1000 100");
 
-
 }
+
+d3.select("svg").selectAll("rect")
+  .on("click", function(d,i){
+
+    console.log(g);
+    console.log(i);
+
+  });
