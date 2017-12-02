@@ -17,11 +17,12 @@ var drag = d3.behavior.drag()
                     .attr('cy', d3.event.y);
         });*/
 
-var resize = d3.behavior.drag()
+var resize = d3.drag()
         .on('drag', function () {
             g.selectAll('.resizingContainer')
                     .attr('width', function (c) {
-                        return  d3.event.x - this.attributes.x.value  < 0? 0:d3.event.x - this.attributes.x.value;
+                      var value = parseInt(this.attributes.width.value) + parseInt(d3.event.dx)
+                        return  value < 0? 0:value;
                     });
         });
 
@@ -63,7 +64,8 @@ d3.selectAll("g").selectAll('rect')
           y:49
         }])
         .enter()
-        .attr('class', 'resizingContainer')
+        .append("rect")
+        .classed("resizingContainer", true)
         .attr("width", 70)
         .attr("height", 70)
         .attr("x", function(d){
@@ -74,5 +76,5 @@ d3.selectAll("g").selectAll('rect')
         })
         .attr("rx", 6)
         .attr("ry", 6)
-        .style("fill", d3.scale.category20c())
-        .call(resize);;
+        .style("fill", "#000000")
+        .call(resize);
