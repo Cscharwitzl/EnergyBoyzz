@@ -1,4 +1,16 @@
 
+
+var resize = d3.behavior.drag()
+        .on('drag', function () {
+            g.selectAll('.resizingContainer')
+                    .attr('width', function (c) {
+                        return  d3.event.x - this.attributes.x.value  < 0? 0:d3.event.x - this.attributes.x.value;
+                    });
+        });
+
+
+
+
 let dataset;
 
 d3.csv("data.csv", function(err, data) {
@@ -24,7 +36,9 @@ function draw(){
     })
     .attr("height", 25)
     .attr("stroke", "black")
-    .attr("fill", "transparent");
+    .attr("fill", "transparent")
+    .attr('class', 'resizingContainer')
+    .call(resize);
 
   d3.select("svg").selectAll("rect")
     .attr("x", function(data, index){
