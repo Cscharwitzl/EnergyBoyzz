@@ -38,7 +38,7 @@ function getMax(){
   let erg = 0;
 
   dataset.forEach(function(d){
-    erg += d.Prozent *10;
+    erg += parseFloat(d.Prozent / 100);
   });
 
   return erg+10;
@@ -46,6 +46,7 @@ function getMax(){
 
 
 let dataset;
+let haushalt;
 let max;
 let elements;
 
@@ -67,8 +68,14 @@ function setX(){
     });
 }
 
-function get getCsv(csv){
-d3.csv(csv, function(err, data) {
+function getCsv(csv){
+  d3.csv("endverbrauch2016.csv", function(err, data) {
+
+     haushalt = data;
+
+  });
+
+d3.csv("endverbrauch2016.csv", function(err, data) {
 
    dataset = data;
    max = getMax();
@@ -95,9 +102,9 @@ d3.select("figure")
     .classed("resizingContainer", true)
     .attr("y", 5)
     .attr("width", function(d){
-      return parseFloat(d.Prozent*10);
+      return parseFloat(d.Prozent/100);
     })
-    .attr("height", 50)
+    .attr("height", 100)
     .style("fill", "transparent")
     .style("stroke", "#000")
     .call(resize);
@@ -106,6 +113,9 @@ d3.select("figure")
 
   d3.select("svg")
     .attr("width", "100%")
-    .attr("viewBox", "0 0 "+max+" 60");
+    .attr("viewBox", "0 0 "+max+" 120");
 
 }
+
+
+getCsv("data.csv");
