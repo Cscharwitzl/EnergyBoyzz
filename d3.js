@@ -67,13 +67,15 @@ function setX(){
     });
 }
 
-d3.csv("data.csv", function(err, data) {
+function get getCsv(csv){
+d3.csv(csv, function(err, data) {
 
    dataset = data;
    max = getMax();
    draw();
 
 });
+}
 
 
 
