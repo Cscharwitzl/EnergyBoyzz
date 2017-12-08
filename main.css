@@ -1,3 +1,79 @@
+html{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .resizingContainer {
   cursor: e-resize;
+}
+
+.selection{
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cons{
+  width: 30%;
+  height: 50vh;
+  border: 4px solid #1E283D;
+  border-radius: 10px;
+  transition: .2s;
+  transition: box-shadow .4s;
+  color: black;
+  text-align: center;
+}
+
+.cons h2{
+
+}
+
+.cons:hover{
+  box-shadow: 0 25px 40px -20px #1E283D;
+}
+
+.selected{
+  border: 4px solid #6BBC68;
+}
+
+.selected:hover{
+  background: #6BBC68;
+}
+
+#House_1{
+  display: block;
+  text-indent: -9999px;
+  width: 80%;
+  height: 70%;
+  margin: 20px auto;
+  background: url(images/House_1.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#House_2{
+  display: block;
+  text-indent: -9999px;
+  width: 80%;
+  height: 70%;
+  margin: 20px auto;
+  background: url(images/House_2.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#House_3{
+  display: block;
+  text-indent: -9999px;
+  width: 80%;
+  height: 70%;
+  margin: 20px auto;
+  background: url(images/House_3.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
 }

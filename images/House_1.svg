@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="341px" height="327px" viewBox="0 0 341 327" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FBDA61" offset="0%"></stop>
+            <stop stop-color="#F76B1C" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-2" points="93 206.999422 170.5 152 248 206.999422 248 321.999422 200.560721 321.999422 140.121167 321.999422 93 321.999422"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-5">
+            <path d="M92.2050958,322.000011 C37.4315504,293.635651 0,236.439129 0,170.5 C0,76.3354502 76.3354502,0 170.5,0 C264.66455,0 341,76.3354502 341,170.5 C341,236.439129 303.56845,293.635651 248.794904,322.000011 L92.2050748,322 Z" id="Combined-Shape" fill="url(#linearGradient-1)"></path>
+            <g id="Rectangle">
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                <path stroke="#1E283D" stroke-width="4" d="M95,208.032535 L170.5,154.452453 L246,208.032535 L246,319.999422 L200.560721,319.999422 L140.121167,319.999422 L95,319.999422 L95,208.032535 Z"></path>
+            </g>
+            <rect id="Rectangle-2" stroke="#1E283D" stroke-width="4" x="148" y="244" width="46" height="76"></rect>
+            <path d="M155,322 L187,322" id="Line" stroke="#FFFFFF" stroke-width="10" stroke-linecap="square"></path>
+            <circle id="Oval-2" stroke="#1E283D" stroke-width="3" cx="170" cy="209" r="15"></circle>
+            <circle id="Oval-2" stroke="#1E283D" stroke-width="3" cx="170" cy="209" r="15"></circle>
+            <path d="M170,196 L170,223" id="Line" stroke="#1E283D" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M181,218 L171,209" id="Line" stroke="#1E283D" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M169,218 L159,209" id="Line-Copy" stroke="#1E283D" stroke-width="4" stroke-linecap="square" transform="translate(164.000000, 213.500000) scale(-1, 1) translate(-164.000000, -213.500000) "></path>
+        </g>
+    </g>
+</svg>
