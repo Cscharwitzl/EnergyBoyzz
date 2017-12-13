@@ -85,6 +85,8 @@ function setX(){
 function setup(kwh){
   haushalt = parseFloat(kwh);
 
+  d3.select(".d3").html("");;
+
 d3.csv("endverbrauch2016.csv", function(err, data) {
    dataset = data;
    max = getMax();
@@ -99,8 +101,6 @@ function draw(){
 
 d3.select(".d3")
     .append("svg");
-
-    console.log(dataset);
 
   elements = d3.select("svg").selectAll("g")
     .data(dataset)
