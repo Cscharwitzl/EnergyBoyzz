@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 html{
   padding: 0;
   margin: 0;
   width: 100%;
   height: 100%;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
 }
 
 .resizingContainer {
@@ -23,8 +26,7 @@ html{
   height: 50vh;
   border: 4px solid #1E283D;
   border-radius: 10px;
-  transition: .2s;
-  transition: box-shadow .4s;
+  transition: transform .4s;
   color: black;
   text-align: center;
 }
@@ -34,7 +36,8 @@ html{
 }
 
 .cons:hover{
-  box-shadow: 0 25px 40px -20px #1E283D;
+  /*box-shadow: 0 25px 40px -20px #1E283D;*/
+  transform: scale(.97);
 }
 
 .selected{
@@ -42,7 +45,7 @@ html{
 }
 
 .selected:hover{
-  background: #6BBC68;
+  /*background: #6BBC68;*/
 }
 
 #House_1{
