@@ -27,8 +27,32 @@ var resize = d3.drag()
                     });
 
             setX();
+            calcPreis();
         });
 
+
+function calcPreis(){
+
+  let sum = 0;
+
+  elements.each(function(d){
+    // console.log("width: ", this.attributes.width.value / max * haushalt / 100);
+    // console.log("max: ", max);
+    // console.log("prozent: ",this.attributes['data-preis'].nodeValue);
+    //   sum += this.attributes['data-preis'].nodeValue * (this.attributes.width.value/max) * haushalt / 100;
+
+    
+  })
+
+  console.log("sum: ",sum);
+
+
+  d3.select(".preis")
+    .text(Math.round(sum *100) /100);
+
+
+  console.log("################################################");
+}
 
 function getVisible() {
   return elements.filter(function(d,i){return this.attributes.width.value > 0;}).size();
@@ -68,19 +92,14 @@ function setX(){
     });
 }
 
-function getCsv(csv){
-  d3.csv("endverbrauch2016.csv", function(err, data) {
-
-     haushalt = data;
-
-  });
+function setup(kwh){
+  haushalt = parseFloat(kwh);
 
 d3.csv("endverbrauch2016.csv", function(err, data) {
-
    dataset = data;
    max = getMax();
    draw();
-
+   console.log(max);
 });
 }
 
@@ -89,7 +108,7 @@ d3.csv("endverbrauch2016.csv", function(err, data) {
 
 function draw(){
 
-d3.select("figure")
+d3.select(".d3")
     .append("svg");
 
     console.log(dataset);
@@ -104,18 +123,27 @@ d3.select("figure")
     .attr("width", function(d){
       return parseFloat(d.Prozent/100);
     })
-    .attr("height", 100)
+    .attr("height", 500)
     .style("fill", "transparent")
     .style("stroke", "#000")
+    .attr("data-preis", function(d){
+      //return d.Prozent/(max*100) * preis;
+      return d.Preisprokwh;
+    })
     .call(resize);
 
   setX();
 
   d3.select("svg")
     .attr("width", "100%")
-    .attr("viewBox", "0 0 "+max+" 120");
+    .attr("viewBox", "0 0 "+max+" "+520);
+
+  d3.select("body").select(".d3")
+    .append("figcaption")
+    .classed("preis", true)
+    .text(calcPreis());
 
 }
 
 
-getCsv("data.csv");
+setup(3500);
