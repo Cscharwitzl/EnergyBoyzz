@@ -41,7 +41,7 @@ function calcPreis(){
 
 
   d3.select(".preis")
-    .text((Math.round(sum *100) /100) +"€ / Monat");
+    .text((Math.round(sum *100) /100)+"€ / Monat");
 }
 
 function getVisible() {
@@ -63,7 +63,7 @@ let dataset;
 let haushalt;
 let max;
 let elements;
-
+let labels;
 
 
 
@@ -71,12 +71,23 @@ function setX(){
   d3.select("svg").selectAll("rect")
     .attr("x", function(data, index){
       var x = 0;
+      let width = this.attributes.width.value;
 
       if(elements.data()[index-1] !== undefined){
         var el = elements.filter(function (d, i) { return i === index-1;});
 
         x += parseFloat(el.attr("x")) + parseFloat(el.attr("width"));
+
       }
+
+        labels.filter(function(d,i){return i == index;})
+          .attr("x",function(d){
+            return ((width-this.getBBox().width)/2) < 0 ? 0 : x+((width-this.getBBox().width)/2);
+          })
+          .classed("noshow", function(d){
+              return ((width-this.getBBox().width)/2) < 0;
+          })
+          ;
 
       return x;
     });
@@ -102,11 +113,11 @@ function draw(){
 d3.select(".d3")
     .append("svg");
 
-  elements = d3.select("svg").selectAll("g")
+g =   d3.select("svg").selectAll("g")
     .data(dataset)
     .enter()
-    .append("g")
-    .append("rect")
+    .append("g");
+  elements =  g.append("rect")
     .classed("resizingContainer", true)
     .attr("y", 5)
     .attr("width", function(d){
@@ -120,6 +131,14 @@ d3.select(".d3")
       return d.Preisprokwh;
     })
     .call(resize);
+
+labels = g.append("text")
+      .text(function(d){
+        return d.Name;
+      })
+      .attr("y", 250)
+      .attr("fill", "black")
+      .attr("font-size","150px");
 
   setX();
 
