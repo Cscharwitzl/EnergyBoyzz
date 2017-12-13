@@ -1,6 +1,6 @@
-Name,Prozent
-Kohle,18179.1091
-Öl,425328.5866
-Gas,191383.5766
-Erneuerbare, 169201.0701
-Brennbare Abfälle, 12644.73785
+Name,Prozent,Preisprokwh
+Kohle,18179.1091,0.0325
+Öl,425328.5866,0.035
+Gas,191383.5766,0.045
+Erneuerbare, 169201.0701,0.255
+Brennbare Abfälle, 12644.73785,0.0975

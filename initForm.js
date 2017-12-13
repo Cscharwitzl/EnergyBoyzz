@@ -9,6 +9,7 @@ for(let i = 0; i<consumption.length; i++){
     }
     consumption[i].classList.add("selected");
     activeConsumption = i;
+    setup(consumption[i].dataset.kwh);
     console.log(activeConsumption);
   })
 }

@@ -36,22 +36,12 @@ function calcPreis(){
   let sum = 0;
 
   elements.each(function(d){
-    // console.log("width: ", this.attributes.width.value / max * haushalt / 100);
-    // console.log("max: ", max);
-    // console.log("prozent: ",this.attributes['data-preis'].nodeValue);
-    //   sum += this.attributes['data-preis'].nodeValue * (this.attributes.width.value/max) * haushalt / 100;
-
-    
+    sum += (this.attributes.width.value / max) * haushalt * d.Preisprokwh;
   })
-
-  console.log("sum: ",sum);
 
 
   d3.select(".preis")
-    .text(Math.round(sum *100) /100);
-
-
-  console.log("################################################");
+    .text((Math.round(sum *100) /100) +"€ / Monat");
 }
 
 function getVisible() {
@@ -99,7 +89,6 @@ d3.csv("endverbrauch2016.csv", function(err, data) {
    dataset = data;
    max = getMax();
    draw();
-   console.log(max);
 });
 }
 
@@ -140,10 +129,8 @@ d3.select(".d3")
 
   d3.select("body").select(".d3")
     .append("figcaption")
-    .classed("preis", true)
-    .text(calcPreis());
+    .classed("preis", true);
+
+  calcPreis();
 
 }
-
-
-setup(3500);
