@@ -12,6 +12,13 @@ html{
   cursor: e-resize;
 }
 
+h1{
+  position: relative;
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+
 .selection{
   position: relative;
   width: 80%;
@@ -44,43 +51,90 @@ html{
   border: 4px solid #6BBC68;
 }
 
-.selected:hover{
-  /*background: #6BBC68;*/
-}
-
 #House_1{
   display: block;
-  text-indent: -9999px;
   width: 80%;
   height: 70%;
   margin: 20px auto;
-  background: url(images/House_1.svg);
+  /*background: url(images/House_1.svg);
   background-size: contain;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
 }
 
 #House_2{
   display: block;
-  text-indent: -9999px;
+  /*text-indent: -9999px;*/
   width: 80%;
   height: 70%;
   margin: 20px auto;
-  background: url(images/House_2.svg);
+  /*background: url(images/House_2.svg);
   background-size: contain;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
 }
 
 #House_3{
   display: block;
-  text-indent: -9999px;
   width: 80%;
   height: 70%;
   margin: 20px auto;
-  background: url(images/House_3.svg);
+  /*background: url(images/House_3.svg);
   background-size: contain;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
 }
 
 .noshow{
   visibility: hidden;
+}
+
+figcaption{
+  font-size: 64px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 100px;
+}
+
+.d3 rect{
+  stroke: rgb(0, 0, 0);
+  stroke-width: 2px;
+}
+
+.d3 svg g:nth-child(1) rect{
+  fill: rgba(0,0,0,.8);
+}
+
+.d3 svg g:nth-child(1) text{
+  fill: white;
+}
+
+.d3 svg g:nth-child(2) rect{
+  fill: #000;
+}
+
+.d3 svg g:nth-child(2) text{
+  fill: white;
+}
+
+.d3 svg g:nth-child(3) rect{
+  fill: #F8D800;
+}
+
+.d3 svg g:nth-child(3) text{
+  fill: white;
+}
+
+.d3 svg g:nth-child(4) rect{
+  fill: #6BBC68;
+}
+
+.d3 svg g:nth-child(4) text{
+  fill: white;
+}
+
+.d3 svg g:nth-child(5) rect{
+  fill: #B210FF;
+}
+
+.d3 svg g:nth-child(5) text{
+  fill: white;
 }
